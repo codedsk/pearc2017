@@ -127,7 +127,7 @@ In this exercise, we will explore building part of the data analysis tool Indian
 In the previous presentation, you saw examples of Shiny applications, and RMarkdown Documents that could be compiled into static web pages, used as notebooks for a more literate style of computing, or combined with Shiny widgets to create interactive documents. Today we will use historical precipitation data from the National Oceanic and Atmospheric Administration (NOAA) to build a map showing the mean hourly precipitation for hours with measurable precipitation. As we transform our map, we'll keep the old versions and, in the end, we'll build a web page to display them using one of the RMarkdown templates. 
 
 <div class="tutimg">
-![Maps we will be building in this tutorial](tutorial_result.png){width=70%}
+![Maps we will be building in this tutorial](images/tutorial_result.png){width=70%}
 </div>
 
 <br/>
@@ -148,7 +148,7 @@ When you first open RStudio, give yourself some room by expanding the code pane.
 </div> <!-- column-left-2 -->
 
 <div class="column-left-2">
-  ![Give yourself plenty of elbow room as you code by expanding the code pane.](tutorial_hints_2a.png){.img-responsive}
+  ![Give yourself plenty of elbow room as you code by expanding the code pane.](images/tutorial_hints_2a.png){.img-responsive}
 </div> <!-- column-left-2 -->
 </div> <!-- clearfix-->
 
@@ -165,11 +165,11 @@ The RMarkdown document we will be editing has both Markdown and code chunks in i
 ```
 ```
 
-In a code chunk, there are two controls you can use to run code. They are both located in the upper right corner of the code chunk. Pressing the ![](run_previous_code_button.png) button will execute all code chunks above the current chunk. Pressing the ![](run_current_code_button.png) button will execute the current code chunk.
+In a code chunk, there are two controls you can use to run code. They are both located in the upper right corner of the code chunk. Pressing the ![Run previous code chunk.](images/run_previous_code_button.png) button will execute all code chunks above the current chunk. Pressing the ![Run current code chunk.](images/run_current_code_button.png) button will execute the current code chunk.
 </div> <!--column-left-2 -->
 
 <div class="column-left-2">
-![Markdown looks like plain text and wiki syntax. Code chunks have a grey background. Use the green play button in the upper right corner to execute the current code chunk. The results will be displayed below the code chunk.](tutorial_hints_4a.png){.img-responsive}
+![Markdown looks like plain text and wiki syntax. Code chunks have a grey background. Use the green play button in the upper right corner to execute the current code chunk. The results will be displayed below the code chunk.](images/tutorial_hints_4a.png){.img-responsive}
 </div> <!-- column-left-2 -->
 </div> <!-- clearfix -->
 
@@ -178,11 +178,11 @@ In a code chunk, there are two controls you can use to run code. They are both l
 
 <div class="clearfix">
 <div class="column-left-2">
-To compile or render the document, use the *Knit* (![Knit Button.](knit_button.png))  button located just above the Code Pane. This will turn your completed RMarkdown file into a HTML document and launch the document in a new window for you to view.
+To compile or render the document, use the *Knit* (![Knit Button.](images/knit_button.png))  button located just above the Code Pane. This will turn your completed RMarkdown file into a HTML document and launch the document in a new window for you to view.
 </div> <!-- column-left-2 -->
 
 <div class="column-left-2">
-![Press the "Knit"" button just above the code pane to convert your RMarkdown document into an HTML Document.](tutorial_hints_6.png){.img-responsive}
+![Press the "Knit"" button just above the code pane to convert your RMarkdown document into an HTML Document.](images/tutorial_hints_6.png){.img-responsive}
 </div> <!-- column-left-2 -->
 </div> <!-- clearfix -->
 
@@ -191,11 +191,11 @@ To compile or render the document, use the *Knit* (![Knit Button.](knit_button.p
 
 <div class="clearfix">
 <div class="column-left-2">
-If you run the code chunks out of order, you may find that some of the variables have been modified unexpectedly. This could be the cause of maps not showing up correctly in this tutorial. One possible resolution is to clear the session's variables and run all of the code chunks again in order. Use the *Session->Clear Workspace* menu item from the top of the RStudio IDE to clear out the values for all variables. Then press the ![Run Previous Chunks.](run_previous_code_button.png) button to run the code chunks above the current chunk, and press the ![Run Current Chunk.](run_current_code_button.png) button to run the current code chunk.
+If you run the code chunks out of order, you may find that some of the variables have been modified unexpectedly. This could be the cause of maps not showing up correctly in this tutorial. One possible resolution is to clear the session's variables and run all of the code chunks again in order. Use the *Session->Clear Workspace* menu item from the top of the RStudio IDE to clear out the values for all variables. Then press the ![Run Previous Chunks.](images/run_previous_code_button.png) button to run the code chunks above the current chunk, and press the ![Run Current Chunk.](images/run_current_code_button.png) button to run the current code chunk.
 </div> <!-- column-left-2 -->
 
 <div class="column-left-2">
-![The Session -> Clear Workspace menu item will remove all variables from the current R session so you can start over.](tutorial_hints_7.png){.img-responsive}
+![The Session -> Clear Workspace menu item will remove all variables from the current R session so you can start over.](images/tutorial_hints_7.png){.img-responsive}
 </div> <!-- column-left-2 -->
 </div> <!-- clearfix -->
 
@@ -278,7 +278,7 @@ The monitor station information comes with longitude and latitude coordinates. L
 <br/>
 
 ##### Your Turn: Display the Station Locations
-Find the code chunk labeled *create_map_object*, around line 68, and execute it pressing the green play button (![Run Button.](run_current_code_button.png)) in the upper right corner of the chunk. Your map will show up underneath the code chunk and should look like this:
+Find the code chunk labeled *create_map_object*, around line 68, and execute it pressing the green play button (![Run Button.](images/run_current_code_button.png)) in the upper right corner of the chunk. Your map will show up underneath the code chunk and should look like this:
 
 ```{r plot_station_locations, echo=FALSE}
 leaflet(precip.details.df %>% select(-data)) %>%
@@ -321,7 +321,7 @@ precip.details.df
 <br/>
 
 ##### Your Turn: Calculate the Means
-For the code chunk labeled *calculate_precipitation_means*, press the ![Run Button.](run_current_code_button.png) button to run the code chunk and update the data frame. There is no output from this code chunk.
+For the code chunk labeled *calculate_precipitation_means*, press the ![Run Button.](images/run_current_code_button.png) button to run the code chunk and update the data frame. There is no output from this code chunk.
 
 <br/>
 
@@ -398,7 +398,7 @@ precip.details.df %<>%
   mutate(color = qpal(mean))
 ```
 
-**When you have completed updating the code chunk, run it by pressing the ![Run Button.](run_current_code_button.png) button in the code chunk controls.**
+**When you have completed updating the code chunk, run it by pressing the ![Run Button.](images/run_current_code_button.png) button in the code chunk controls.**
 
 <br/>
 
@@ -443,7 +443,7 @@ map %>%
 <br/>
 
 ##### Your Turn: Generate an Updated Map
-Run the code chunk, using the ![Run Button.](run_current_code_button.png) button in the upper right corner of the chunk, to see what the updated map looks like. The markers should now be a range of colors, similar to this one:
+Run the code chunk, using the ![Run Button.](images/run_current_code_button.png) button in the upper right corner of the chunk, to see what the updated map looks like. The markers should now be a range of colors, similar to this one:
 ```{r show_updated_map_with_color_binned_markers, echo=FALSE}
 map <- leaflet(precip.details.df %>% select(-data)) %>%
         addTiles()
@@ -514,7 +514,7 @@ map %<>%
 <br/>
 
 ##### Your Turn: View Map with Updated Markers
-Now run the code chunk to confirm that the updated map shows a border around the markers. Press the ![Run Button.](run_current_code_button.png) button in the upper right corner of the chunk to execute the code.
+Now run the code chunk to confirm that the updated map shows a border around the markers. Press the ![Run Button.](images/run_current_code_button.png) button in the upper right corner of the chunk to execute the code.
 
 ```{r show_map_with_border_around_markers, echo=FALSE}
 map
@@ -563,7 +563,7 @@ map %<>%
 <br/>
 
 ##### Your Turn: View Map with Legend
-Execute the code in the code chunk using the ![Run Button.](run_current_code_button.png) button in the upper right corner of the chunk. Do you see our new legend on the map? It should show what values the marker colors correspond to.
+Execute the code in the code chunk using the ![Run Button.](images/run_current_code_button.png) button in the upper right corner of the chunk. Do you see our new legend on the map? It should show what values the marker colors correspond to.
 
 ```{r, echo=FALSE}
 map
@@ -603,15 +603,15 @@ output:
 
 All RMarkdown files have a YAML declaration at the top. This one states that the file should be rendered as a FlexDashboard, which is one of the RMarkdown templates that allow developers to quickly generate a dashboard from the R and Markdown code in the file. There are a number of different styles of FlexDashboards and you can learn more about them at http://rmarkdown.rstudio.com/flexdashboard/. 
 
-Our FlexDashboard contains a 2x2 grid of the maps we have created today. We can render it to HTML by using the *Knit* (![Knit Button.](knit_button.png)) button near the top of the RStudio IDE.
+Our FlexDashboard contains a 2x2 grid of the maps we have created today. We can render it to HTML by using the *Knit* (![Knit Button.](images/knit_button.png)) button near the top of the RStudio IDE.
 
 <br/>
 
 ##### Your Turn: Generate an HTML Document
-Press the ![Knit Button.](knit_button.png) button, just above the code pane, to generate and view our HTML document. A new window should pop up with all of the maps you generated in this exercise.
+Press the ![Knit Button.](images/knit_button.png) button, just above the code pane, to generate and view our HTML document. A new window should pop up with all of the maps you generated in this exercise.
 
 <div class="tutimg">
-![Maps we built in this tutorial.](tutorial_result.png){width=70%}
+![Maps we built in this tutorial.](images/tutorial_result.png){width=70%}
 </div>
 
 
